@@ -8,7 +8,7 @@
 Item.create ([	
 {name:'Self Care ',
 
-ingredient:('Cheeses''Meats' 'Seasonal Mixed Fruits' 'Crackers' 'Custom Desert' 'Jam'),
+ingredient:('Cheeses' 'Meats' 'Seasonal Mixed Fruits' 'Crackers' 'Custom Desert' 'Jam'),
 
 size: '1 person ',
 
