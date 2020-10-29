@@ -5,3 +5,30 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Item.create ([	
+{name:'Self Care ',
+
+ingredient:('Cheeses''Meats' 'Seasonal Mixed Fruits' 'Crackers' 'Custom Desert' 'Jam'),
+
+size: '1 person ',
+
+img_url:'https://www.momontimeout.com/wp-content/uploads/2019/05/best-ever-charcuterie-board-500x500.jpg',
+
+price:75.00,
+
+item_id:1
+
+}, 
+
+])
+Rating.create ([
+
+{comment:'I love this board',
+
+star_rating:5, 
+
+item_id:1
+
+}
+
+])
