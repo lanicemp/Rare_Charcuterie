@@ -1,4 +1,4 @@
-class RatingsController < ApplicationController
+class Api::V1::RatingsController < ApplicationController
   before_action :set_rating, only: [:show, :update, :destroy]
 
   # GET /ratings
