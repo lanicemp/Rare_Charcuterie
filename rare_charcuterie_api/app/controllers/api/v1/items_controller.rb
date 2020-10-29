@@ -1,11 +1,11 @@
-class ItemsController < ApplicationController
+class Api::V1::ItemsController < ApplicationController
   before_action :set_item, only: [:show, :update, :destroy]
 
   # GET /items
   def index
     @items = Item.all
 
-    render json: @items
+    render json: @items, except:[:created_at, :updated_at] ,status: 200
   end
 
   # GET /items/1
