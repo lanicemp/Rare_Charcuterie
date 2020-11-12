@@ -10,7 +10,8 @@ class Api::V1::ItemsController < ApplicationController
 
   # GET /items/1
   def show
-    render json: @item
+    @item = Item.find(params[:id])
+    render json: @item, status: 200 
   end
 
   # POST /items
@@ -18,7 +19,8 @@ class Api::V1::ItemsController < ApplicationController
     @item = Item.new(item_params)
 
     if @item.save
-      render json: @item, status: :created, location: @item
+      render json: @item, status: :created
+      # , location: @item
     else
       render json: @item.errors, status: :unprocessable_entity
     end
@@ -35,7 +37,9 @@ class Api::V1::ItemsController < ApplicationController
 
   # DELETE /items/1
   def destroy
+    @item = Item.find(params[:id])
     @item.destroy
+    render json: {itemID: @item.id}
   end
 
   private

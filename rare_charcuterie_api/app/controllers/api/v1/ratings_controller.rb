@@ -5,7 +5,7 @@ class Api::V1::RatingsController < ApplicationController
   def index
     @ratings = Rating.all
 
-    render json: @ratings
+    render json: @ratings, except:[:created_at, :updated_at] ,status: 200
   end
 
   # GET /ratings/1
