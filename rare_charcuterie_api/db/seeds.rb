@@ -12,7 +12,7 @@ ingredient:('Cheeses' 'Meats' 'Seasonal Mixed Fruits' 'Crackers' 'Custom Desert'
 
 size: '1 person ',
 
-img_url:'https://www.momontimeout.com/wp-content/uploads/2019/05/best-ever-charcuterie-board-500x500.jpg',
+img_url:'https://drive.google.com/file/d/1NibKGYR5b465oI_LW_dC1lJKIz-4LPW3/view?usp=sharing',
 
 price:75.00,
 
