@@ -12,16 +12,17 @@ class ItemsContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='items-container'>
+        <ItemList items={this.props.items}/>
        
       </div>
     );
   }
 }
 const mapStateToProps = (state) => {
-  console.log("this is just state for menu", state);
+   console.log("this is just state for menu", state);
 
-  return { items: state.items.items };
+  return { items: state.items };
 };
 
 export default connect(mapStateToProps, { fetchItems })(ItemsContainer);
