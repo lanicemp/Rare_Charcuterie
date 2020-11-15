@@ -1,4 +1,4 @@
-export const fetchRatingss = () => {
+export const fetchRatings = () => {
     return (dispatch) => {
      
         dispatch({type:"FETCH_RATINGS"})
