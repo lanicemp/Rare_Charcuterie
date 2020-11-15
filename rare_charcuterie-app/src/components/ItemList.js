@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "../styles/ItemList.css";
 
 class ItemList extends React.Component {
   renderItems = () => {
