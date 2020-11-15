@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  margin: 5;
+  margin-right: auto;
   padding: 0.5rem 0.5rem;
 }
 p {
@@ -17,6 +17,10 @@ p {
   text-align: center;
 }
 h2{
+  font-family: ui-sans-serif;
+  text-align: center;
+}
+h4{
   font-family: ui-sans-serif;
   text-align: center;
 }
@@ -50,8 +54,8 @@ label {
 }
 section {
   display: flex;
-  justify-content: center;
-  flex-direction: row;
+  justify-content: right;
+  flex-direction: none;
 }
 
 input {
