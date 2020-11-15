@@ -12,9 +12,11 @@ class ItemsContainer extends React.Component {
 
   render() {
     return (
+      <div className='item_card'>
       <div className='items-container'>
         <ItemList items={this.props.items}/>
        
+      </div>
       </div>
     );
   }
