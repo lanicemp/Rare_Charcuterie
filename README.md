@@ -8,32 +8,33 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 # TODO
+
 - [ ] Add a comment to track this
 - [ ] Update this to remove the comment
-- [ ] Get the Average Star srating working 
+- [ ] Get the Average Star srating working
 - [ ] Able to add images that are downloaded on my computer.
 - [ ] Add authentication and authorization to the applicatin for the user
-- [ ] Update the css in this application 
-- [ ] Deploy this application 
-LIKE 
+- [ ] Update the css in this application
+- [ ] Deploy this application
+      LIKE
 - [x] Add a navbar
-- [ ] Add ecommerce to the application so that the user can purchase the item. 
+- [ ] Add ecommerce to the application so that the user can purchase the item.
 
 # Rare Charcuterie
 
-This is an ecommerce application that will accomodate users and allow then to place order and, and also allows the administator to update the menu options. 
+This is an ecommerce application that will accomodate users and allow then to place order and, and also allows the administator to update the menu options.
 
 ## Summary
 
-  - [Getting Started](#getting-started)
-  - [Runing the tests](#running-the-tests)
-  - [Deployment](#deployment)
-  - [Built With](#built-with)
-  - [Contributing](#contributing)
-  - [Versioning](#versioning)
-  - [Authors](#authors)
-  - [License](#license)
-  - [Acknowledgments](#acknowledgments)
+- [Getting Started](#getting-started)
+- [Runing the tests](#running-the-tests)
+- [Deployment](#deployment)
+- [Built With](#built-with)
+- [Contributing](#contributing)
+- [Versioning](#versioning)
+- [Authors](#authors)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 
 ## Getting Started
 
@@ -85,8 +86,6 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-  
-
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code
@@ -98,9 +97,10 @@ of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
--**LaNi
-  - **Billie Thompson** - *Provided README Template* -
-    [PurpleBooth](https://github.com/PurpleBooth)
+- **LaNice Powell** - _Created Application_ -
+
+- **Billie Thompson** - _Provided README Template_ -
+  [PurpleBooth](https://github.com/PurpleBooth)
 
 See also the list of
 [contributors](https://github.com/PurpleBooth/a-good-readme-template/contributors)
@@ -114,6 +114,6 @@ details
 
 ## Acknowledgments
 
-  - Hat tip to anyone whose code was used
-  - Inspiration
-  - etc
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
