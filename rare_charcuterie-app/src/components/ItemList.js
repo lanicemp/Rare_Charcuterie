@@ -5,8 +5,9 @@ class ItemList extends React.Component {
   renderItems = () => {
     return this.props.items.map((item) => {
       return (
+
         <div class="card" >
-  
+
          <img key={item.id} src={item.img_url} />
           <h2>{item.name}</h2>
          
@@ -14,6 +15,7 @@ class ItemList extends React.Component {
           </br> {item.price}
            </p>
         </div>
+       
       );
     });
   };
