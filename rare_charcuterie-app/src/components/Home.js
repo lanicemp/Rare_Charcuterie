@@ -29,9 +29,11 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <br></br>
+        <h2> Where food is Art </h2>
         <br></br>
         <SearchBar  />
         <button >Search</button>
+    
         {/* <SearchBar input={input} onChange={updateInput} /> */}
         {/* <button >Search</button> */}
         <br></br>
