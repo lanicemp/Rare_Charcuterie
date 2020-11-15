@@ -6,9 +6,10 @@ class Header extends React.Component {
 
   render() {
       return (
-        <div >
+        <div className="Header">
            <header>
-               <h1> Rare Chacuterie </h1>
+               <h1> Rare Charcuterie </h1>
+               <button>Your Cart</button>
         </header>   
               
              
