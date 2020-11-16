@@ -3,7 +3,7 @@ const ratingsReducer = (state =  [], action) => {
     switch (action.type) {
       case "FETCH_RATINGS":
         console.log("in rating reducer");
-        state.push({ratings:action.ratings})
+        state.push({...action.payload})
         // return [...state, [...state.ratings]];
         return state;
         // {
@@ -11,7 +11,7 @@ const ratingsReducer = (state =  [], action) => {
         //   ratings: [...state.ratings],
         //   loading: true,
         // };
-      case "ADD_RATINGS":
+      // case "ADD_RATINGS":
         // return {
         //   ...state,
         //   ratings: action.ratings,

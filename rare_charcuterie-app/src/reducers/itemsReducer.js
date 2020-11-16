@@ -3,7 +3,7 @@ const itemsReducer = (state = [], action) => {
   switch (action.type) {
     case "FETCH_ITEMS":
       console.log("in item reducer");
-      state.push({items:action.items})
+      state.push({...action.payload})
       // return [...state, [...state.items]];
       return state
       // {
@@ -11,7 +11,7 @@ const itemsReducer = (state = [], action) => {
       //   items: [...state.items],
       //   loading: true,
       // };
-    case "ADD_ITEMS":
+    // case "ADD_ITEMS":
       // return {
       //   ...state,
       //   items: action.items,
