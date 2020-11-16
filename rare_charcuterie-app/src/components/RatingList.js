@@ -9,9 +9,9 @@ class RatingList extends React.Component {
      console.log(rating)
       return (
         
-        <div class="card">
-          <h3 key={rating.id} src={rating.comment}/>
-          <div class="card-body">
+        <div  key={rating.id} className ="card">
+          <h3 Reviews/>
+          <div className ="card-body">
             <h2>{rating.comment}</h2>
           </div>
         </div>
