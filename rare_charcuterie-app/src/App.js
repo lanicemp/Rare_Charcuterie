@@ -3,13 +3,14 @@ import { connect } from "react-redux";
 import "./App.css";
 import { fetchItems } from "./actions/itemActions";
 import { fetchRatings } from "./actions/ratingActions";
-import ItemsContainer from "./containers/ItemsContainer";
+import ItemsContainer from "./containers/items/ItemsContainer";
 import Home from "./components/Home";
 import Header from "./components/Header/Header";
-import Footer from './components/Footer';
+import Footer from './components/Footer/Footer';
 import Navigation from './components/Navigation/Navigation';
 import Faqs from './components/Faqs/Faqs';
-import RatingsContainer from './containers/RatingsContainer';
+import Contact from './components/Contact/Contact'
+import RatingsContainer from './containers/Ratings/RatingsContainer';
 import { Switch, Route, withRouter } from "react-router-dom";
 
 class App extends Component {
@@ -31,6 +32,7 @@ class App extends Component {
         <br></br><br></br>
         <Faqs/>
       <br></br><br></br>
+      <Contact/>
         <Footer/>
         
       </div>
