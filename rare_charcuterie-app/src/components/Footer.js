@@ -6,11 +6,11 @@ class Footer extends React.Component {
 
   render() {
       return (
-        <div >
+        <div className ='footer' >
            <footer>
            <ul>
           <li>
-            <a className="active" href="#home">
+            <a class="active" href="#home">
               Home
             </a>
           </li>
