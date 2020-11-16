@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./App.css";
 import { fetchItems } from "./actions/itemActions";
+import { fetchRatingss } from "./actions/ratingActions";
 import ItemsContainer from "./containers/ItemsContainer";
 import Home from "./components/Home";
 import Header from "./components/Header";
@@ -26,7 +27,7 @@ class App extends Component {
         <Home />
         <ItemsContainer itemPics={this.props.itemPics} />
         <br></br><br></br>
-        {/* <RatingsContainer ratingComments={this.props.ratingComments}/> */}
+        <RatingsContainer ratingComments={this.props.ratingComments}/>
         <br></br><br></br>
         <Faqs/>
       <br></br>
@@ -41,11 +42,13 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
     items: state.items,
+    ratings:state.ratings
   };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchItems: () => dispatch(fetchItems()),
+    fetchRatings: () => dispatch(fetchRatings()),
   };
 };
 
