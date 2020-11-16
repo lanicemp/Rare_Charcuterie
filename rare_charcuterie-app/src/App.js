@@ -9,6 +9,7 @@ import Header from "./components/Header/Header";
 import Footer from './components/Footer/Footer';
 import Navigation from './components/Navigation/Navigation';
 import Faqs from './components/Faqs/Faqs';
+import About from './components/About/About'
 import Contact from './components/Contact/Contact'
 import RatingsContainer from './containers/Ratings/RatingsContainer';
 import { Switch, Route, withRouter } from "react-router-dom";
@@ -30,6 +31,9 @@ class App extends Component {
         <br></br><br></br>
         <RatingsContainer ratingComments={this.props.ratingComments}/>
         <br></br><br></br>
+
+        <About/>
+        <br></br>
         <Faqs/>
       <br></br><br></br>
       <Contact/>
