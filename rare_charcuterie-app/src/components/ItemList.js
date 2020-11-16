@@ -4,20 +4,18 @@ import "../styles/ItemList.css";
 class ItemList extends React.Component {
   renderItems = () => {
     return this.props.items.map((item) => {
+      console.log(item);
       return (
+        <div key={item.id} className="card">
+          <img src={item.img_url} />
+          <div className="card-body">
+            <h2>{item.name}</h2>
 
-        <div class="card"  >
-
-         <img key={item.id} src={item.img_url} />
-         <div class="card-body">
-          <h2>{item.name}</h2>
-         
-          <p>{item.size} <br>
-          </br> {item.price}
-           </p>
-           </div>
+            <p>
+              {item.size} <br></br> {item.price}
+            </p>
+          </div>
         </div>
-       
       );
     });
   };
