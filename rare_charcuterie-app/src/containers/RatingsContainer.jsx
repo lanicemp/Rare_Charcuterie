@@ -14,6 +14,7 @@ class RatingsContainer extends React.Component {
     return (
       <div className='rating_card'>
       <div className='ratings-container'>
+        <h2>Reviews</h2>
         <RatingList ratings={this.props.ratings}/>
        
       </div>
