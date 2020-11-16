@@ -1,18 +1,23 @@
-const itemsReducer = (state = { items: [], loading: false }, action) => {
+// state = { items: [], loading: false 
+const itemsReducer = (state = [], action) => {
   switch (action.type) {
     case "FETCH_ITEMS":
       console.log("in item reducer");
-      return {
-        ...state,
-        items: [...state.items],
-        loading: true,
-      };
+      state.push({items:action.items})
+      // return [...state, [...state.items]];
+      return state;
+      //  {
+      //   ...state,
+      //   items: [...state.items],
+      //   loading: true,
+      // };
     case "ADD_ITEMS":
-      return {
-        ...state,
-        items: action.items,
-        loading: false,
-      };
+      // return {
+      //   ...state,
+      //   items: action.items,
+      //   loading: false,
+      // };
+      return [...state, action.items];
     default:
       return state;
   }
