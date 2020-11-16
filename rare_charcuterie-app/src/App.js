@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./App.css";
 import { fetchItems } from "./actions/itemActions";
-import { fetchRatingss } from "./actions/ratingActions";
+import { fetchRatings } from "./actions/ratingActions";
 import ItemsContainer from "./containers/ItemsContainer";
 import Home from "./components/Home";
 import Header from "./components/Header";
