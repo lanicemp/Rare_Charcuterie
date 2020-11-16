@@ -5,8 +5,8 @@ const itemsReducer = (state = [], action) => {
       console.log("in item reducer");
       state.push({items:action.items})
       // return [...state, [...state.items]];
-      return state;
-      //  {
+      return state
+      // {
       //   ...state,
       //   items: [...state.items],
       //   loading: true,
