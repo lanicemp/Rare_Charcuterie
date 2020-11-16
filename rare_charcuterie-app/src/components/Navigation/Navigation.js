@@ -1,12 +1,14 @@
 import React from "react";
 import Home from "../Home";
-import faqs, { Faqs } from "../Faqs/index"
-import contact, {Contact} from "../Contact/index"
-import RatingsContainer from "../../containers/Ratings/index"
+import RatingsContainer from "../../containers/Ratings/index";
+import contact, { Contact } from "../Contact/index";
+import about, { About } from "../About/index";
+
+import faqs, { Faqs } from "../Faqs/index";
+
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import "./Navigation.css";
-
 
 class Navigation extends React.Component {
   render() {
@@ -16,47 +18,46 @@ class Navigation extends React.Component {
           <nav>
             <ul>
               <li>
-              <Link to="/Home">Home</Link>
+                <Link to="/Home">Home</Link>
               </li>
               <li>
                 <Link to="/Reviews "> Reviews</Link>
               </li>
               <li>
-              <Link to="/contact">Contact</Link>
+                <Link to="/contact">Contact</Link>
               </li>
               <li>
-              <Link to="/About">About</Link>
+                <Link to="/About">About Us</Link>
               </li>
               <li>
-              <Link to="/Faqs">FAQs</Link>
+                <Link to="/Faqs">FAQs</Link>
               </li>
               <li>
-                <a href="/artisan_shoppe">Artisan Shoppe</a>
+              <Link to ="/artisan_shoppe">Artisan Shoppe</Link>
               </li>
               <li>
-                <a href="/Catering_Events">Catering & Events</a>
+              <Link to ="/Catering_Events">Catering & Events</Link>
               </li>
+             
             </ul>
           </nav>
 
           <Switch>
-          {/* <Route exact path="/Reviews" component ={RatingsContainer}/> */}
-        </Switch>
-        <Switch>
-          <Route exact path="/Faqs" component ={Faqs}/>
-        </Switch>
-      <Switch>
-          <Route exact path="/Contact" component ={Contact}/>
-        </Switch>
+          <Route exact path="/"  />
+          </Switch>
+          <Switch>
+            <Route exact path="/Faqs" component={Faqs} />
+          </Switch>
+          <Switch>
+            <Route exact path="/Contact" component={Contact} />
+          </Switch>
+          <Switch>
+            <Route exact path="/About" component={About} />
+          </Switch>
         </div>
       </Router>
     );
   }
 }
-
-
-
-
-
 
 export default Navigation;
