@@ -21,3 +21,15 @@ ul {
   li a:hover {
     background-color: #111;
   }
+
+  button {
+    font: inherit;
+    padding: 0.5rem .5rem;
+    background: #ebcd4b;
+    border: 1px solid #e9da97;
+    color: whitesmoke;
+    border-radius: 6px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
+    cursor: pointer;
+    
+  }
