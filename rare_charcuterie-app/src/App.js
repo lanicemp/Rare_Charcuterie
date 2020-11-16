@@ -5,19 +5,19 @@ import { fetchItems } from "./actions/itemActions";
 import { fetchRatings } from "./actions/ratingActions";
 import ItemsContainer from "./containers/ItemsContainer";
 import Home from "./components/Home";
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import Footer from './components/Footer';
-import Navigation from './components/Navigation';
-import Faqs from './components/Faqs';
+import Navigation from './components/Navigation/Navigation';
+import Faqs from './components/Faqs/Faqs';
 import RatingsContainer from './containers/RatingsContainer';
 import { Switch, Route, withRouter } from "react-router-dom";
 
 class App extends Component {
-  componentDidMount() {
+  // componentDidMount() {
   
-    this.props.fetchItems();
+  //   this.props.fetchItems();
    
-  }
+  // }
 
   render() {
     return (
@@ -30,9 +30,7 @@ class App extends Component {
         <RatingsContainer ratingComments={this.props.ratingComments}/>
         <br></br><br></br>
         <Faqs/>
-      <br></br>
-      <br></br>
-      <br></br>
+      <br></br><br></br>
         <Footer/>
         
       </div>
