@@ -8,8 +8,9 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 # TODO
-
-- [ ] Add a comment to track this
+- [ ] Populate Content
+- [ ] Populate Reviews 
+- [ ] 
 - [ ] Update this to remove the comment
 - [ ] Get the Average Star srating working
 - [ ] Able to add images that are downloaded on my computer.
