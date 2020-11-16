@@ -8,12 +8,16 @@ class RatingList extends React.Component {
     return this.props.ratings.map((rating) => {
      console.log(rating)
       return (
-        
-        <div  key={rating.id} className ="card">
-          <h3 Reviews/>
+       <div className= "reviews">
+              <h3 Reviews/>
+        <div  className ="card" key={rating.id}>
+     
+       
           <div className ="card-body">
-            <h2>{rating.comment}</h2>
+          <h2>{rating.comment}</h2>
+        
           </div>
+        </div>
         </div>
       );
     });
