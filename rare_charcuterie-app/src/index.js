@@ -7,16 +7,15 @@ import App from "./App";
 import reportWebVitals from './reportWebVitals';
 
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, combineReducers } from "redux";
 import thunk from "redux-thunk";
-
-
 import { BrowserRouter } from "react-router-dom";
-import itemsReducer from "./reducers/itemsReducer.js";
 
 
 
- const store = createStore(itemsReducer, applyMiddleware(thunk));
+
+const reducer = combineReducers(reducers)
+ const store = createStore(reducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
