@@ -1,8 +1,12 @@
 import React from "react";
 import Home from "../Home";
+import faqs, { Faqs } from "../Faqs/index"
+import contact, {Contact} from "../Contact/index"
+import RatingsContainer from "../../containers/Ratings/index"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 import "./Navigation.css";
-import App from "../../App";
+
 
 class Navigation extends React.Component {
   render() {
@@ -12,39 +16,37 @@ class Navigation extends React.Component {
           <nav>
             <ul>
               <li>
-              <Link to="/">Home</Link>
+              <Link to="/Home">Home</Link>
               </li>
               <li>
-                <Link to="Reviews "> Reviews</Link>
+                <Link to="/Reviews "> Reviews</Link>
               </li>
               <li>
-              <Link to="contact">Contact</Link>
+              <Link to="/contact">Contact</Link>
               </li>
               <li>
-              <Link to="about">About</Link>
+              <Link to="/About">About</Link>
               </li>
               <li>
-              <Link to="faqs">FAQs</Link>
+              <Link to="/Faqs">FAQs</Link>
               </li>
               <li>
-                <a href="#artisan_shoppe">Artisan Shoppe</a>
+                <a href="/artisan_shoppe">Artisan Shoppe</a>
               </li>
               <li>
-                <a href="#faqs">Catering & Events</a>
+                <a href="/Catering_Events">Catering & Events</a>
               </li>
             </ul>
           </nav>
 
           <Switch>
-          <Route path="/Ratings" component ={App}/>
-           
-       
-          <Route path="/">
-            <Users />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
+          {/* <Route exact path="/Reviews" component ={RatingsContainer}/> */}
+        </Switch>
+        <Switch>
+          <Route exact path="/Faqs" component ={Faqs}/>
+        </Switch>
+      <Switch>
+          <Route exact path="/Contact" component ={Contact}/>
         </Switch>
         </div>
       </Router>
@@ -55,11 +57,6 @@ class Navigation extends React.Component {
 
 
 
-function Ratings() {
-  return <h2>RatingList</h2>;
-}
 
-function Users() {
-return <p> Users</p>
-}
+
 export default Navigation;
