@@ -3,6 +3,6 @@ import itemsReducer from './itemsReducer'
 import ratingsReducer from './ratingsReducer'
 
 export default combineReducers({
-  itemsReducer,
-  ratingsReducer
+  items: itemsReducer,
+  ratings: ratingsReducer
 })
