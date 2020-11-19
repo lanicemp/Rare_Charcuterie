@@ -1,4 +1,6 @@
 // state = { ratings: [], loading: false }, action
+
+
 const ratingsReducer = (state =  [], action) => {
     switch (action.type) {
       case "FETCH_RATINGS":
