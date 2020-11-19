@@ -10,11 +10,14 @@
 # TODO
 - [ ] Populate Content
 - [ ] Populate Reviews 
-- [ ] 
-- [ ] Update this to remove the comment
-- [ ] Get the Average Star srating working
+
+- [ ] Add star rating function 
+- [ ] Add form to the Events tab in Navbar 
 - [ ] Able to add images that are downloaded on my computer.
 - [ ] Add authentication and authorization to the applicatin for the user
+- [ ] Create User login 
+- [ ] Add authentication and authorization to the applicatin for the user
+
 - [ ] Update the css in this application
 - [ ] Deploy this application
       LIKE
