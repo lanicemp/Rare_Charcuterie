@@ -19,7 +19,7 @@ class ItemsContainer extends React.Component {
       <div className='item_card'>
       <div className='items-container'>
      
-        
+      <h2> Rare Products </h2>
       
         <ItemList items={this.props.items}/>
        
