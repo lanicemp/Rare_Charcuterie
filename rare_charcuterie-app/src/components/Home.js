@@ -1,6 +1,6 @@
 import React from "react";
 import SearchBar from "./SearchBar/SearchBar";
-import ItemList from "./ItemList/ItemList";
+// import ItemList from "./ItemList/ItemList";
 
 class Home extends React.Component {
   // SearchPage = () => {
