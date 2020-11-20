@@ -12,6 +12,7 @@ import Navigation from './components/Navigation/Navigation';
 import Faqs from './components/Faqs/Faqs';
 import About from './components/About/About'
 import Contact from './components/Contact/Contact'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Switch, Route, withRouter } from "react-router-dom";
 
@@ -25,15 +26,13 @@ class App extends Component {
       <div className="App">
         <Header />
         <Navigation/>
+        <br></br>
         <Home />
         <ItemsContainer ItemList items={this.props.items} />
         <br></br><br></br>
-        
-        <br></br><br></br>
-
-        <About/>
+        {/* <About/> */}
         <br></br>
-        <Faqs/>
+        {/* <Faqs/> */}
       <br></br><br></br>
       <Contact/>
         <Footer/>
