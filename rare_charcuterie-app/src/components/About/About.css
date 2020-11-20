@@ -1,0 +1,6 @@
+about .img {
+    max-width:40%;
+    max-height: 40%;
+    margin: 0 auto;
+    display: block; /* remove extra space below image */
+}
