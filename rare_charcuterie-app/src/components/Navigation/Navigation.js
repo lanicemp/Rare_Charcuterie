@@ -3,7 +3,6 @@ import Home from "../Home";
 import RatingsContainer from "../../containers/Ratings/index";
 import contact, { Contact } from "../Contact/index";
 import about, { About } from "../About/index";
-
 import faqs, { Faqs } from "../Faqs/index";
 import AddItem from "../AddItem"
 
@@ -42,13 +41,13 @@ class Navigation extends React.Component {
               <li>
               <Link to ="../AddItem"></Link>
               </li>
-             
             </ul>
           </nav>
 
           <Switch>
           <Route exact path="/"  />
           </Switch>
+         
           <Switch>
             <Route exact path="/Faqs" component={Faqs} />
           </Switch>
