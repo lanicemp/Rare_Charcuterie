@@ -7,11 +7,12 @@ class Header extends React.Component {
     return (
       <div className="Header">
         <header>
-          <h1> Rare Charcuterie </h1>
+          <h1> <span>RARE <b>CHARCUTERIE</b></span> </h1>
           {/* <button>Cart</button> */}
         </header>
         <section className="Header-section">
         <button>Cart</button>
+        <button> Add Item </button>
         </section>
       
 
