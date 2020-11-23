@@ -1,17 +1,16 @@
 import React from "react";
-
 import { Route, Switch } from "react-router-dom";
-// import { fetchItems } from "../../actions/itemActions";
 import { connect } from "react-redux";
 //it invoke an action I have to connect to redux
 import ItemList from "../../components/ItemList/ItemList";
-// import { Card, Button } from "react-bootstrap";
-import { Card, Col, Row, CardGroup, CardColumns } from "react-bootstrap";
+import {  Row,  CardColumns } from "react-bootstrap";
 
 class ItemsContainer extends React.Component {
   // componentDidMount() {
   //   this.props.fetchItems();
   // }
+  
+  
 
   render() {
     //  debugger
@@ -32,7 +31,10 @@ class ItemsContainer extends React.Component {
 const mapStateToProps = (state) => {
   console.log("this is just state for items", state);
   //Access to state
+
+
   return { items: state.items.items };
+
   //Global state is the storage container that holds information to be used by many components.
   //props are the same as attibutes of an object
   //map = access to anything within the global state
