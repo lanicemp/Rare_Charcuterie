@@ -2,7 +2,7 @@
 const itemsReducer = (state = { items: [], loading: false} , action) => {
   switch (action.type) {
     case "FETCH_ITEMS":
-      debugger 
+   
       console.log("in item reducer");
        return {...state, items:action.payload };
      // action.payload is  the return jsonResopnse from rails. 
