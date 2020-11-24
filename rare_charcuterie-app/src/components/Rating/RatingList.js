@@ -4,9 +4,14 @@ import React, { Component } from "react";
 
 
 class RatingList extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
   renderRatings = () => {
     return this.props.ratings.map((rating) => {
-     console.log(rating)
+     console.log("line 14 RatingList",rating)
       return (
        <div className= "reviews">
               <h3 Reviews/>
