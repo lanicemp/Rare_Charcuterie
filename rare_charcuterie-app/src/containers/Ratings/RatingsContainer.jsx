@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 import {Route, Switch} from 'react-router-dom'
 import RatingList from "../../components/Rating/RatingList";
 // import { Card, Button } from "react-bootstrap";
-import { fetchRatings } from "../../actions/ratingActions";
+// import { fetchRatings } from "../../actions/ratingActions";
 
 class RatingsContainer extends React.Component {
-  componentDidMount() {
-    this.props.fetchRatings();
-  }
+  // componentDidMount() {
+  //   this.props.fetchRatings();
+  // }
 
   render() {
     return (
@@ -23,9 +23,10 @@ class RatingsContainer extends React.Component {
   }
 }
 const mapStateToProps = (state) => {
-   console.log("this is just state for ratings", state);
+   console.log("state for ratings", state);
+debugger 
 
-  return { ratings: state.ratings };
+  return { ratings: state.ratings.ratings };
 };
 
-export default connect(mapStateToProps, { fetchRatings })(RatingsContainer);
+export default connect(mapStateToProps)(RatingsContainer);
