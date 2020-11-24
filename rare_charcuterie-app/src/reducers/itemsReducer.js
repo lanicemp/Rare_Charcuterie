@@ -12,11 +12,7 @@ const itemsReducer = (state = initialState, action) => {
       return { ...state, items: action.payload };
     // action.payload is  the return jsonResopnse from rails.
 
-    case "ADD_ITEMS":
-      return {
-        ...state,
-        items: [...state.items, action.payload]
-      };
+   
     
 
     // case "REMOVE_ITEM":
