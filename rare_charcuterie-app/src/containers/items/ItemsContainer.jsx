@@ -14,6 +14,7 @@ class ItemsContainer extends React.Component {
 
   render() {
     //  debugger
+    
     return (
       <div className="item_card">
         <div className="items-container">
@@ -29,7 +30,7 @@ class ItemsContainer extends React.Component {
   }
 }
 const mapStateToProps = (state) => {
-  console.log("this is just state for items", state);
+  console.log("state for items", state);
   //Access to state
 
 
