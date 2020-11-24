@@ -12,28 +12,22 @@ import { Card, Button, Modal } from "react-bootstrap";
 import "./ItemList.css";
 
 class ItemList extends Component {
-  
-  returnViewItem = () => {
-    
-
-    return (
-      //  The Modal -->
-      <div id="myModal" class="modal">
-        {/* <!-- Modal content --> */}
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p>Some text in the Modal..</p>
-        </div>
-      </div>
-    );
-  };
- 
-
+  constructor(props) {
+    super(props);
+    this.returnViewItem = this.returnViewItem.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+    this.state = {
+      showModal: false,
+      item_id: null,
+      //this.state is false so that the modal will not be shown initially.
+      // We had to set state becuse the only way to rerender is when state is changed.
+      // the state lets react know when to re-render
+    };
+  }
   renderItems = () => {
     return this.props.items.map((item) => {
       console.log(document.getElementById);
 
-      // debugger
       return (
         <div className="itemList" id={item.id} data-id={item.id}>
           <Card key={item.id} style={{ width: "25rem" }}>
@@ -45,17 +39,85 @@ class ItemList extends Component {
                 data-id={item.id}
                 id={item.id}
                 value={item.id}
-                onClick={this.returnViewItem()}
-              > View Item </Button>
+                onClick={this.returnViewItem}
+              >
+                {" "}
+                View Item{" "}
+              </Button>
             </Card.Body>
           </Card>
         </div>
       );
     });
   };
+
+  renderItem = (item_id) => {
+    return (
+      <div className="itemList" id={item_id} data-id={item_id}>
+        <Card key={item_id} style={{ width: "25rem" }}>
+          {/* <Card.Img key="img" variant="top" src={item.img_url} /> */}
+          <Card.Body key="body">
+            {/* <h2>{item.name}</h2>
+            <h3>$ {item.price}</h3> */}
+            <Button
+              data-id={item_id}
+              id={item_id}
+              value={item_id}
+              // onClick={this.returnViewItem}
+            >
+              {" "}
+              View Item{" "}
+            </Button>
+          </Card.Body>
+        </Card>
+      </div>
+    );
+  };
+
+  handleClose() {
+    this.setState({ showModal: false });
+  }
+  returnViewItem(e) {
+    const id = e.target.id;
+    this.setState({ showModal: true, item_id: id });
+    //create const for all of the items that I want passed in this function.
+    // const [show, setShow] = useState(false);
+
+    // const handleClose = () => setShow(false);
+    // const handleShow = () => setShow(true);
+    console.log("im in return view item ");
+    console.log(e);
+    console.log(id);
+
+    //  console.log(e.currentTarget.id)
+  }
   render() {
     // debugger
-    return <div>{this.renderItems()}</div>;
+
+    return (
+      <div>
+        <div>{this.renderItems()}</div>
+        <Modal
+          show={this.state.showModal}
+          onHide={() => this.handleClose()}
+          //the other syntax of onHide ={this.handleClose()} created an error of cannot exceed mximum calls to state
+          // changing the call to an arrow function allowed me to get pass this because the functions is
+          //being called in the rended instead of being apart of the render.
+          backdrop="static"
+          keyboard={false}
+        >
+          <Modal.Header closeButton>
+            {this.state.item_id} In View Item
+          </Modal.Header>
+          <Modal.Body> {this.renderItem(this.state.item_id)} </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={() => this.handleClose()}>
+              Close
+            </Button>
+          </Modal.Footer>{" "}
+        </Modal>
+      </div>
+    );
   }
 }
 
