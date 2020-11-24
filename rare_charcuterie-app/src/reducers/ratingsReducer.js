@@ -1,13 +1,23 @@
 // state = { ratings: [], loading: false }, action
+const initialState = {
+  ratings: [],
+  searchRatings:[],
+  loading:false
+};
 
-
-const ratingsReducer = (state =  [], action) => {
+const ratingsReducer = (state = initialState, action) => {
     switch (action.type) {
       case "FETCH_RATINGS":
         console.log("in rating reducer");
-        state.push({...action.payload})
+        return { ...state, ratings: action.payload };
+
+        case "ADD_RATINGS":
+          return {
+            ...state,
+            ratings: [...state.ratings, action.payload]
+          };
         // return [...state, [...state.ratings]];
-        return state;
+       
         // {
         //   ...state,
         //   ratings: [...state.ratings],
@@ -19,7 +29,7 @@ const ratingsReducer = (state =  [], action) => {
         //   ratings: action.ratings,
         //   loading: false,
         // };
-        return [...state, action.ratings];
+       
       default:
         return state;
     }
