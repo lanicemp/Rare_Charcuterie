@@ -4,7 +4,7 @@ import "./App.css";
 import { fetchItems } from "./actions/itemActions";
 import { fetchRatings } from "./actions/ratingActions";
 import ItemsContainer from "./containers/items/ItemsContainer";
-// import RatingsContainer from './containers/Ratings/RatingsContainer';
+import RatingsContainer from './containers/Ratings/RatingsContainer';
 import Home from "./components/Home";
 import Header from "./components/Header/Header";
 import Footer from './components/Footer/Footer';
@@ -19,7 +19,11 @@ import AddItem from "./components/AddItem";
 
 class App extends Component {
   componentDidMount() {
+    
+    this.props.fetchRatings();
     this.props.fetchItems();
+  
+    
    
   }
 // /* <RatingsContainer ratingComments={this.props.ratingComments}/> */
@@ -34,7 +38,7 @@ class App extends Component {
         
         <ItemsContainer ItemList items={this.props.items} />
         <br></br><br></br>
-        
+        <RatingsContainer RatingList ratings = {this.props.ratings}/>
         {/* <About/> */}
         <br></br>
         {/* <Faqs/> */}
