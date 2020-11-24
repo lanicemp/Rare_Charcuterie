@@ -1,1 +1,1 @@
-export { default as RatingsContainer } from '../../containers/Ratings/RatingsContainer'
+// export { default as RatingsContainer } from '../../containers/Ratings/RatingsContainer'
