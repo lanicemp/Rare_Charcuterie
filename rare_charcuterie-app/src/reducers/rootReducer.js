@@ -1,10 +1,11 @@
 import { combineReducers } from "redux";
 import itemsReducer from "./itemsReducer"
+import ratingsReducer from"./ratingsReducer"
 
 //reducers are to hold and manipulate your state and returns your state 
 const rootReducer = combineReducers({
   items: itemsReducer,
-  // ratings: ratingsReducer
+  ratings: ratingsReducer
 });
 
 export default rootReducer;
