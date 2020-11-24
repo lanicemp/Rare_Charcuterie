@@ -3,10 +3,15 @@ export const fetchRatings = () => {
      
         // dispatch({type:"FETCH_RATINGS"})
         fetch("http://localhost:3000/api/v1/ratings")
-        .then(response => response.json())
-        .then(payload => {
-          console.log(payload)
-          return dispatch({ type: "FETCH_RATINGS", payload });
+        .then((response) => {
+          return response.json();
+        })
+        .then((ratings) => {
+          //passing the items to the payload on line 10
+          dispatch({ type: "FETCH_RATINGS", payload: ratings });
+          //dispatch sends information to the reducer
+          // the inforation is how to manipulate the state.
         });
+        console.log('in fetch ratings')
     };
   };
