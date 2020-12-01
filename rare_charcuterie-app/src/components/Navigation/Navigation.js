@@ -4,7 +4,7 @@ import RatingsContainer from "../../containers/Ratings/index";
 import contact, { Contact } from "../Contact/index";
 import about, { About } from "../About/index";
 import faqs, { Faqs } from "../Faqs/index";
-import AddItem from "../AddItem"
+
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -39,7 +39,7 @@ class Navigation extends React.Component {
               <Link to ="/Catering_Events">Catering & Events</Link>
               </li>
               <li>
-              <Link to ="../AddItem"></Link>
+              {/* <Link to ="../AddItem"></Link> */}
               </li>
             </ul>
           </nav>
@@ -57,9 +57,9 @@ class Navigation extends React.Component {
           <Switch>
             <Route exact path="/About" component={About} />
           </Switch>
-          <Switch>
+          {/* <Switch>
             <Route exact path="../AddItem" component={AddItem} />
-          </Switch>
+          </Switch> */}
         </div>
       </Router>
     );
