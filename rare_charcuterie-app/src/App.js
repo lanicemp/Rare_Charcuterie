@@ -15,7 +15,7 @@ import Contact from './components/Contact/Contact'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Switch, Route, withRouter } from "react-router-dom";
-import AddItem from "./components/AddItem";
+// import AddItem from "./components/AddItem";
 
 class App extends Component {
   componentDidMount() {
