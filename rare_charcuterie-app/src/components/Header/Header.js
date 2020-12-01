@@ -12,7 +12,6 @@ class Header extends React.Component {
         </header>
         <section className="Header-section">
         <button>Cart</button>
-        <button> Add Item </button>
         </section>
       
 
