@@ -2,15 +2,18 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 //it invoke an action I have to connect to redux
+import ItemInput from '../../components/ItemList/ItemInput'
 import ItemList from "../../components/ItemList/ItemList";
-import {  Row,  CardColumns } from "react-bootstrap";
+import {  Row,  CardColumns, Button } from "react-bootstrap";
 
 class ItemsContainer extends React.Component {
   // componentDidMount() {
   //   this.props.fetchItems();
   // }
-  
-  
+  addItem = item => {
+    this.props.dispatch({type:'ADD_ITEM', item})
+  }
+  generateItems = () => this.props.items.map((item, index)=> <li key={index}>{item.name}</li> )
 
   render() {
     //  debugger
@@ -19,6 +22,8 @@ class ItemsContainer extends React.Component {
       <div className="item_card">
         <div className="items-container">
           <h2> Rare Products </h2>
+          <ItemInput addItem={this.addItem}/>
+          {/* <Button onClick={AddItem}> Add Item </Button > */}
           <CardColumns>
             <Row>
               <ItemList items={this.props.items} />
