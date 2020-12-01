@@ -10,6 +10,9 @@ const itemsReducer = (state = initialState, action) => {
     case "FETCH_ITEMS":
       console.log("in item reducer");
       return { ...state, items: action.payload };
+
+    case "ADD_ITEM":
+      return { ...state, items: state.items.concat({name:action.item})}
     // action.payload is  the return jsonResopnse from rails.
 
    
