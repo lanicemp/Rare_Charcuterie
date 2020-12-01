@@ -1,10 +1,10 @@
 import React, { Component, useState } from "react";
 import ReactDOM from "react-dom";
-import AddItem from "../AddItem";
+
 
 import Navigation from "../Navigation/Navigation";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Card, Button, Modal, Container } from "react-bootstrap";
+import { Card, Button, Modal, Container, Col,Row } from "react-bootstrap";
 
 // import { connect } from 'react-redux';
 // import { fetchItems } from "../../actions/itemActions";
@@ -55,35 +55,6 @@ class ItemList extends Component {
     });
   };
 
-  handleClose() {
-    this.setState({ showModal: false });
-  }
-
-  showModal = () => {
-    return (
-      <Modal
-        //  style={{width: "50rem"} }
-        show={this.state.showModal}
-        onHide={() => this.handleClose()}
-        //the other syntax of onHide ={this.handleClose()} created an error of cannot exceed mximum calls to state
-        // changing the call to an arrow function allowed me to get pass this because the functions is
-        //being called in the rended instead of being apart of the render.
-        backdrop="static"
-        keyboard={false}
-      >
-        <Modal.Header closeButton>
-          {this.state.selectedItem.name} In View Item
-          {console.log(this.state)}
-        </Modal.Header>
-        <Modal.Body>{this.renderItem(this.state.item_id)} </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={() => this.handleClose()}>
-            Close
-          </Button>
-        </Modal.Footer>{" "}
-      </Modal>
-    );
-  };
   returnViewItem(e) {
     const id = parseInt(e.target.id);
     const foundItem = this.props.items.find((item) => item.id === id);
@@ -113,20 +84,56 @@ class ItemList extends Component {
     );
   }
 
+  handleClose() {
+    this.setState({ showModal: false });
+  }
+
+  showModal = () => {
+    return (
+      <Modal
+        //  style={{width: "50rem"} }
+        size="lg"
+        show={this.state.showModal}
+        onHide={() => this.handleClose()}
+        //the other syntax of onHide ={this.handleClose()} created an error of cannot exceed mximum calls to state
+        // changing the call to an arrow function allowed me to get pass this because the functions is
+        //being called in the rended instead of being apart of the render.
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <h2>{this.state.selectedItem.name} </h2>
+          {console.log(this.state)}
+        </Modal.Header>
+        <Modal.Body>{this.renderItem(this.state.item_id)} </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => this.handleClose()}>
+            Close
+          </Button>
+        </Modal.Footer>{" "}
+      </Modal>
+    );
+  };
+ 
   renderItem = (props, item_id) => {
     console.log(item_id);
     console.log(props);
     return (
       <div className="viewItem" id={item_id} data-id={item_id}>
-          <Card key={item_id} style={{ width: "25rem" }}>
-          <Card.Body key="body">
-          <Card.Img key="img" variant="top" src={this.state.selectedItem.img_url} />
-          
+      <Container>
+      <Row>
+      <Col xs={9}>
+          <img key="img" variant="top" src={this.state.selectedItem.img_url} />
+          </Col> 
+          <Col> 
+          <h2> $ {this.state.selectedItem.price}</h2>
+          <h6> Ingredients:  {this.state.selectedItem.ingredient}</h6>
+          <h4> Serving Size: {this.state.selectedItem.size}</h4>
+          </Col>
             {/* <h2>{item.name}</h2>
             <h3>$ {item.price}</h3> */}
-            
-            </Card.Body>
-           </Card>
+            </Row> 
+          </Container>
       </div>
     );
   };
