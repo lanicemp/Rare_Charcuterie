@@ -27,8 +27,8 @@ export const addItem = (entry) => {
       body: JSON.stringify(entry),
     })
       .then((resp) => resp.json())
-      .then((data) => {
-        dispatch({ type: "ADD_ITEM", payload: data });
+      .then((item) => {
+        dispatch({ type: "ADD_ITEM", payload:item });
       });
   };
 };
