@@ -10,7 +10,7 @@
 //   Modal,
 // } from "react-bootstrap";
 
-// class ViewItem extends React.Component {
+//  ViewItem extends React.Component {
 //   ViewItem = (e) => {
 //     console.log(e);
 //     const item_id = parseInt(e.currentTarget.id);
