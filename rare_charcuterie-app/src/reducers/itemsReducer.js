@@ -1,3 +1,6 @@
+import cuid from "cuid";
+export const cuidFn = cuid;
+
 // state = { items: [], loading: false}
 const initialState = {
   items: [],
@@ -12,8 +15,16 @@ const itemsReducer = (state = initialState, action) => {
       return { ...state, items: action.payload };
 
     case "ADD_ITEM":
-      return { ...state, items: state.items.concat({name:action.item})}
+    
+        return {...state, items: [...state.items, action.payload]}
+    // const item = {
+    //   id: cuidFn(),
+    //   name: action.payload.name, 
+    //   ingredient: action.payload.ingredient
+    // }
+    //   return {...state, items: [state.items.concat(item)]};
     // action.payload is  the return jsonResopnse from rails.
+    //the spread operator populates an array with previous data
 
    
     
@@ -29,4 +40,4 @@ const itemsReducer = (state = initialState, action) => {
   
 };
 
-export default itemsReducer;
+export default (itemsReducer)
