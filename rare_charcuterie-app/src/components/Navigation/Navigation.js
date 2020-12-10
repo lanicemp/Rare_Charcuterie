@@ -4,8 +4,6 @@ import RatingsContainer from "../../containers/Ratings/index";
 import contact, { Contact } from "../Contact/index";
 import about, { About } from "../About/index";
 import faqs, { Faqs } from "../Faqs/index";
-
-
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import "./Navigation.css";
