@@ -1,7 +1,5 @@
 import React, { Component, useState } from "react";
 import ReactDOM from "react-dom";
-
-
 import Navigation from "../Navigation/Navigation";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Card, Button, Modal, Container, Col,Row } from "react-bootstrap";
@@ -14,7 +12,6 @@ import "./ItemList.css";
 class ItemList extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.returnViewItem = this.returnViewItem.bind(this);
     this.handleClose = this.handleClose.bind(this);
 
@@ -58,7 +55,7 @@ class ItemList extends Component {
   returnViewItem(e) {
     const id = parseInt(e.target.id);
     const foundItem = this.props.items.find((item) => item.id === id);
-    debugger;
+ 
     this.myRef = React.createRef.bind(id);
     console.log(this.props.items);
     this.setState({ showModal: true, item_id: id, selectedItem: foundItem });
