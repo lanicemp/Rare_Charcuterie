@@ -1,7 +1,8 @@
-import React from "react";
+import React, {Componet} from "react";
 import { connect } from "react-redux";
 import { BrowserRouter as Router, Link, Route, Switch, withRouter } from "react-router-dom";
 import { addItem } from "../../actions/itemActions";
+import {fetchItems} from "../../actions/itemActions"
 //it invoke an action I have to connect to redux
 import ItemInput  from '../../components/ItemList/ItemInput'
 import ItemList from "../../components/ItemList/ItemList";
@@ -11,14 +12,22 @@ class ItemsContainer extends React.Component {
   // componentDidMount() {
   //   this.props.fetchItems();
   // }
+  handleOnChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  }
 
-  nextPath(path) {
-    this.props.history.push(path);
-  }
-  addItem = item => {
-    this.props.dispatch({type:'ADD_ITEM', item})
-  }
-  generateItems = () => this.props.items.map((item, index)=> <li key={index}>{item.name}</li> )
+  handleOnSubmit = (e) => {
+    e.preventDefault();
+    console.log(this.state);
+    this.props.addItem(this.state);
+    // this.setState({id:""},{ name: "" }, { ingredient: "" },{price: 0},{size: ""},
+    //   {img_url:""} );
+  };
+  // nextPath(path) {
+  //   this.props.history.push(path);
+  // }
+ 
+  // generateItems = () => this.props.items.map((item, index)=> <li key={index}>{item.name}</li> )
 
   render() {
     //  debugger
@@ -57,9 +66,14 @@ const mapdispatchToProps = dispatch => {
     addItem: () => dispatch(addItem())
   }
 
-}
+ }
+//  componentDidUpdate(prevProps) {
+//   if (this.props.items === prevProps.items) {
+//     return true;
+//   }
+// }
 
-export default withRouter(connect(mapStateToProps, mapdispatchToProps)(ItemsContainer));
+export default withRouter(connect(mapStateToProps, mapdispatchToProps )(ItemsContainer));
 //connect is connecting react to redux functionality
 // The functionality is access to the global state come from mapStatetoProps aka the first argument(always!!!!)
 //and the dispatch function
