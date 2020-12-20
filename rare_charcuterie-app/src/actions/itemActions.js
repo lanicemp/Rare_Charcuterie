@@ -1,3 +1,8 @@
+export const FETCH_ITEMS = 'FETCH_ITEMS';
+export const ADD_ITEM = 'ADD_ITEM';
+
+
+
 export const fetchItems = () => {
   return (dispatch) => {
     // dispatch({type: "FETCH_ITEMS" })
@@ -7,7 +12,7 @@ export const fetchItems = () => {
       })
       .then((items) => {
         //passing the items to the payload on line 10
-        dispatch({ type: "FETCH_ITEMS", payload: items });
+        dispatch({ type: FETCH_ITEMS, payload: items });
         //dispatch sends information to the reducer
         // the inforation is how to manipulate the state.
       });
@@ -15,9 +20,9 @@ export const fetchItems = () => {
   };
 }; //Actions are the instructions you pass to the reducer
 
-export const addItem = (entry) => {
+ export const addItem = (entry) => {
   return (dispatch) => {
-    dispatch({ type: "FETCH_ITEMS" });
+    dispatch({ type: FETCH_ITEMS });
     return fetch("http://localhost:3000/api/v1/items", {
       method: "POST",
       headers: {
@@ -28,7 +33,9 @@ export const addItem = (entry) => {
     })
       .then((resp) => resp.json())
       .then((item) => {
-        dispatch({ type: "ADD_ITEM", payload:item });
+        dispatch({ type: ADD_ITEM, payload:item });
       });
   };
 };
+
+
