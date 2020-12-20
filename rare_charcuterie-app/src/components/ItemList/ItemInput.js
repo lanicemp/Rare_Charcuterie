@@ -1,13 +1,21 @@
 import React, { Component } from "react";
-import {addItem} from "../../actions/itemActions"
+import cuid from "cuid";
+import { connect } from "react-redux";
+import {addItem} from '../../actions/itemActions'
+import { Card, Button, Modal, Container, Col,Row } from "react-bootstrap";
+
+export const cuidFn = cuid;
 
 class ItemInput extends Component {
   constructor(props) {
     super(props);
+
+
     this.state = {
+      id:cuid(),
       name: "",
       ingredient: "",
-      price: 0,
+      price: "",
       size: "",
       img_url: ""
     };
@@ -34,8 +42,8 @@ class ItemInput extends Component {
     e.preventDefault();
     console.log(this.state);
     this.props.addItem(this.state);
-    this.setState({ name: "" }, { ingredient: "" },{price: 0},{size: ""},
-      {img_url: ""} );
+    // this.setState({id:""},{ name: "" }, { ingredient: "" },{price: 0},{size: ""},
+    //   {img_url:""} );
   };
   componentDidMount() {
     if (this.props.item) {
@@ -44,19 +52,21 @@ class ItemInput extends Component {
         name: attributes.name,
         ingredient: attributes.ingredient,
         price: attributes.price,
-        size: attributes.size
+        size: attributes.size,
+        img_url: attributes.img_url
       });
     }
   }
 
   render() {
-    let { name, ingredient } = this.state;
+    let { name, ingredient, price, size, img_url } = this.state;
     return (
-      <div>
+      <div classname="itemInput">
         Add New Item
-        <form onSubmit={this.handleOnSubmit}>
+        <form id="add-form" onSubmit={this.handleOnSubmit}>
           <label>Item Name </label>
           <input
+          id= "create"
             type="text"
             name="name"
             placeholder="enter a new name"
@@ -78,7 +88,7 @@ class ItemInput extends Component {
             type="number"
             name="price"
             placeholder="enter a price"
-            value={this.state.price}
+            value={price}
             onChange={this.handleOnChange}
           />
           <br></br>
@@ -86,12 +96,21 @@ class ItemInput extends Component {
           <input
             type="text"
             name="size"
-            size="size"
             placeholder="enter the size"
-            value={this.state.size}
+            value={size}
             onChange={this.handleOnChange}
           />
           <br></br>
+          <label>Image </label>
+          <input
+          type="text"
+          name= "img_url"
+          value={img_url}
+          onChange={this.handleOnChange}
+          />
+          <br></br>
+
+
           <input type="submit" value="Add Item" />
         </form>
       </div>
@@ -99,4 +118,9 @@ class ItemInput extends Component {
   }
 }
 
-export default ItemInput;
+const mapDispatchToProps = {addItem}
+
+
+export default connect(null, mapDispatchToProps)(ItemInput);
+//Added the connect to connect the reducers with this compnent
+
