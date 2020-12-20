@@ -1,4 +1,4 @@
-
+import {FETCH_ITEMS, ADD_ITEM} from '../actions/itemActions';
 
 // state = { items: [], loading: false}
 const initialState = {
@@ -9,13 +9,15 @@ const initialState = {
 const itemsReducer = (state = initialState, action) => {
   switch (action.type) {
     
-    case "FETCH_ITEMS":
+    case FETCH_ITEMS:
       console.log("in item reducer");
       return { ...state, items: action.payload };
 
-    case "ADD_ITEM":
+    case ADD_ITEM:
     
         return {...state, items: [...state.items, action.payload]}
+        //In each case, the spread syntax expands an iterable object, usually an array, 
+        // though it can be used on any interable, including a string.
     // const item = {
     //   id: cuidFn(),
     //   name: action.payload.name, 
