@@ -16,18 +16,18 @@ class RatingsContainer extends React.Component {
       <div className='ratings-container'>
         <h2>Reviews</h2>
         <br></br>
-        <Carousel>
+        {/* <Carousel> */}
      
-        <CardColumns>
+        {/* <CardColumns> */}
             <Row>
           
         <RatingList ratings={this.props.ratings}/>
        
     
         </Row>
-        </CardColumns>
+        {/* </CardColumns> */}
         
-        </Carousel>
+        {/* </Carousel> */}
         
       </div>
       </div>
