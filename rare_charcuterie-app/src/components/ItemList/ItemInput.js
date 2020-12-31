@@ -3,6 +3,7 @@ import cuid from "cuid";
 import { connect } from "react-redux";
 import {addItem} from '../../actions/itemActions'
 import { Card, Button, Modal, Container, Col,Row } from "react-bootstrap";
+import axios from "axios"
 
 export const cuidFn = cuid;
 
@@ -17,7 +18,8 @@ class ItemInput extends Component {
       ingredient: "",
       price: "",
       size: "",
-      img_url: ""
+      img_url: "",
+      selectedFile: null 
     };
     // this.handleOnChange = this.handleOnChange.bind(this);
     // this.handleOnSubmit = this.handleOnSubmit.bind(this);
@@ -37,6 +39,15 @@ class ItemInput extends Component {
     //  }
     //   );
   };
+
+  fileSelectedHandler = (e ) => {
+    this.setState({
+    selectedFile: e.target.files[0]
+  })
+  }
+fileUploadHandler = () => {
+
+}
 
   handleOnSubmit = (e) => {
     e.preventDefault();
@@ -61,7 +72,7 @@ class ItemInput extends Component {
   render() {
     let { name, ingredient, price, size, img_url } = this.state;
     return (
-      <div classname="itemInput">
+      <div className="itemInput">
         Add New Item
         <form id="add-form" onSubmit={this.handleOnSubmit}>
           <label>Item Name </label>
@@ -103,10 +114,10 @@ class ItemInput extends Component {
           <br></br>
           <label>Image </label>
           <input
-          type="text"
+          type="file"
           name= "img_url"
           value={img_url}
-          onChange={this.handleOnChange}
+          onChange={this.fileSelectedHandler}
           />
           <br></br>
 
