@@ -1,4 +1,4 @@
-import React, { Component} from "react";
+import React, {Component} from "react";
 import { Card, Button, Modal, Container, Col, Row } from "react-bootstrap";
 
 
@@ -9,14 +9,16 @@ class ItemModalCard extends Component {
     this.returnViewItem = this.returnViewItem.bind(this);
     this.handleClose = this.handleClose.bind(this);
 
-    this.state = {
-        showModal: false,
-        item_id: null,
-        selectedItem: null,
-      };
+     this.state = {
+      showModal: false,
+      item_id: null,
+      selectedItem: null,
+    };
   }
 
   returnViewItem(e) {
+    debugger
+    console.log(" in ItemModalCard ")
     const id = parseInt(e.target.id);
     const foundItem = this.props.items.find((item) => item.id === id);
 
