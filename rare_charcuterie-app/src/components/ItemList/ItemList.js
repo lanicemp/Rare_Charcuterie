@@ -9,6 +9,7 @@ import ItemCard from './ItemCard'
 //removing the imports above because Im passing it down to the props in the container
 import "./ItemList.css";
 
+
  const ItemList = ({items}) => {
   // constructor(props) {
   //   super(props);
