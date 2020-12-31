@@ -10,7 +10,7 @@ class RatingCard extends Component {
     let { rating } = this.props;
     console.log(rating)
     return (
-      <div className="reviews">
+      <div className="reviews" key= {rating.id}>
           <Card>
         <h3 Reviews />
 
