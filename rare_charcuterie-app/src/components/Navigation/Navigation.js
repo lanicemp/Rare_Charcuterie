@@ -54,7 +54,7 @@ class Navigation extends React.Component {
           </Switch>
           <Switch>
             <Route exact path="/About" component={About} />
-          </Switch>
+          </Switch> 
           {/* <Switch>
             <Route exact path="../AddItem" component={AddItem} />
           </Switch> */}
