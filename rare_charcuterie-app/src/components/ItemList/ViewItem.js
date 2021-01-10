@@ -1,47 +1,15 @@
-// import React, { Component } from "react";
-// import { connect } from "react-redux";
-// import {
-//   Card,
-//   Col,
-//   Row,
-//   CardGroup,
-//   CardColumns,
-//   Button,
-//   Modal,
-// } from "react-bootstrap";
+import React from "react";
 
-//  ViewItem extends React.Component {
-//   ViewItem = (e) => {
-//     console.log(e);
-//     const item_id = parseInt(e.currentTarget.id);
-//     debugger;
-//     const item = document.getElementById(item_id);
 
-//     const item_attribute = item.getAttribute(item_id);
-//     debugger;
-//     const [show, setShow] = useState(false);
+class ViewItem extends React.Component {
+  render() {
+      console.log("In View Item")
+    return (
+      <div className="view Item">
+        <h2> View Item </h2>
+      </div>
+    );
+  }
+}
 
-//     const handleClose = () => setShow(false);
-//     const handleShow = () => setShow(true);
-
-//     return (
-   
-//         <Modal
-//           show={show}
-//           onHide={handleClose}
-//           backdrop="static"
-//           keyboard={false}
-//         >
-//           <Modal.Header closeButton>In View Item</Modal.Header>
-//           <Modal.Footer>
-//           <Button variant="secondary" onClick={handleClose}>
-//             Close
-//           </Button>
-//           </Modal.Footer>
-//         </Modal>
-     
-//     );
-//   };
-// }
-
-// export default ViewItem;
+export default ViewItem;
