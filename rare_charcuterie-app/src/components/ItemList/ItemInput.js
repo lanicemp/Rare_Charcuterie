@@ -44,6 +44,7 @@ class ItemInput extends Component {
     this.setState({
     selectedFile: e.target.files[0]
   })
+  console.log(e.target.files[0])
   }
 fileUploadHandler = () => {
 
@@ -114,10 +115,11 @@ fileUploadHandler = () => {
           <br></br>
           <label>Image </label>
           <input
-          type="file"
+          type="text"
           name= "img_url"
           value={img_url}
-          onChange={this.fileSelectedHandler}
+          accept="image/png, image/jpeg"
+          onChange={this.handleOnChange}
           />
           <br></br>
 
