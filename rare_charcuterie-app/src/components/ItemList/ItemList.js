@@ -31,7 +31,7 @@ import "./ItemList.css";
     // {element ? <Element element={element} /> : 'Loading..'}
 
     console.log(items)
-    return items.map((item) => (item ? < ItemCard item={item} />: 'Loading..')
+    return items.map((item) => (item ? < ItemCard item={item} /> : 'Loading..')
       // console.log(document.getElementById);
   
 
