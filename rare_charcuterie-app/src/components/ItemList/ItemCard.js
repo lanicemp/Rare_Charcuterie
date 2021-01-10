@@ -3,100 +3,85 @@ import { Card, Button, Modal, Container, Col, Row } from "react-bootstrap";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { withRouter, Redirect } from "react-router-dom";
 import ItemModalCard from "./ItemModalCard";
+import ViewItem from "./ViewItem";
 
 class ItemCard extends Component {
   constructor(props) {
     super(props);
-    this.toItemModal = this.toItemModal.bind(this);
-    // this.handleClose = this.handleClose.bind(this);
-    // this.renderItem = this.renderItem.bind(this);
+    // this.toItemModal = this.toItemModal.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+    this.renderItem = this.renderItem.bind(this);
+    this.returnViewItem = this.returnViewItem.bind(this);
 
     this.state = {
       showModal: false,
       item_id: null,
       selectedItem: null,
-      redirect: null
+      redirect: null,
     };
   }
 
-  render() {
-    let { item } = this.props;
-    console.log("in ItemCard");
-    return (
-      <div className="itemList" id={item.id} data-id={item.id}>
-        <Card key={item.id} style={{ width: "25rem" }}>
-          <Card.Img key="img" variant="top" src={item.img_url} />
-          <Card.Body key="body">
-            <h2>{item.name}</h2>
-            <h3>$ {item.price}</h3>
-            <Button
-              data-id={item.id}
-              id={item.id}
-              value={item.id}
-              onClick={this.toItemModal}
-            >
-              {" "}
-              View Item{" "}
-            </Button>
-          </Card.Body>
-        </Card>
-      </div>
-    );
-  }
+ 
 
-   toItemModal = (item) => {
-    console.log("in to item modal");
-    console.log(this.props.item.id);
-    console.log(this.props.item)
-    console.log(parseInt(item.target.id))
-  console.log(this.state.showModal)
-  
-    
-    return (
-    
-      <div className="itemModal" key={item.id}>
-          {this.state.showModal == true ? this.showModal() : null}
-        <ItemModalCard  item={this.props.item}/>
-      </div>
-    );
-    
-  }
+  // toItemModal = (item) => {
+  //   console.log("in to item modal");
+  //   console.log(this.props.item.id);
+  //   console.log(this.props.item);
+  //   console.log(parseInt(item.target.id));
+  //   console.log(this.state.showModal);
 
-  // returnViewItem(e) {
-  //   const id = parseInt(e.target.id);
-  //   const foundItem = this.props.items.find((item) => item.id === id);
-
-  //   this.myRef = React.createRef.bind(id);
-  //   console.log(this.props.items);
-  //   this.setState({ showModal: true, item_id: id, selectedItem: foundItem });
-  //   //create const for all of the items that I want passed in this function.
-  //   // const [show, setShow] = useState(false);
-
-  //   // const handleClose = () => setShow(false);
-  //   // const handleShow = () => setShow(true);
-  //   console.log("im in return view item ");
-  //   console.log(e);
-  //   console.log(id);
-
-  //   //  console.log(e.currentTarget.id)
-  // }
-  // render() {
   //   return (
   //     <div>
-  //       <div>{this.renderItem()}</div>
-
-  //       {this.state.showModal == true ? this.showModal() : null}
-  //       {/* {//if this.showModal is true redirect to showModal function or do nothing with null} */}
+  //        {this.state.showModal == true ? this.showModal() : null}
+  //       <ItemModalCard/>
   //     </div>
+  //     // {/* <div className="itemModal" key={item.id}>
+  //     //     {this.state.showModal == true ? this.showModal() : null}
+  //     //   <ItemModalCard  item={this.props.item}/>
+  //     // </div> */}
   //   );
-  // }
+  // };
 
-  // handleClose() {
-  //   this.setState({ showModal: false });
-  // }
+  returnViewItem= (item) => {
+    console.log("in Return View Item")
+    const id = parseInt(item.target.id);
+    console.log(id)
+    console.log(item)
+  
+    const foundItem = this.props.items.find((item) => item.id === id);
+
+    this.myRef = React.createRef.bind(id);
+    console.log(this.props.items);
+    this.setState({ showModal: true, item_id: id, selectedItem: foundItem });
+    //create const for all of the items that I want passed in this function.
+    // const [show, setShow] = useState(false);
+
+    // const handleClose = () => setShow(false);
+    // const handleShow = () => setShow(true);
+    console.log("im in return view item ");
+    console.log(item);
+    
+    console.log(id);
+
+    //  console.log(e.currentTarget.id)
+  }
+  render() {
+    return (
+      <div>
+        <div>{this.renderItem()}</div>
+
+        {this.state.showModal == true ? this.showModal() : null}
+        {/* {//if this.showModal is true redirect to showModal function or do nothing with null} */}
+      </div>
+    );
+  }
+
+  handleClose() {
+    this.setState({ showModal: false });
+  }
 
   showModal = () => {
-    debugger
+    debugger;
     return (
       <Modal
         //  style={{width: "50rem"} }
@@ -123,29 +108,54 @@ class ItemCard extends Component {
     );
   };
 
-  // renderItem = (props,item_id) => {
-  //   let item = this.props.item
-  //   console.log(item)
+  renderItem = (props,item_id) => {
+    let item = this.props.item
+    console.log(item)
 
-  //   return (
-  //     <div className="viewItem" id={item_id} data-id={item_id}>
-  //     <Container>
-  //     <Row>
-  //     <Col xs={9}>
-  //         <img key="img" variant="top" src={item.img_url} />
-  //         </Col>
-  //         <Col>
-  //         <h2> $ {item.price}</h2>
-  //         <h6> Ingredients:  {item.ingredient}</h6>
-  //         <h4> Serving Size: {item.size}</h4>
-  //         </Col>
-  //           {/* <h2>{item.name}</h2>
-  //           <h3>$ {item.price}</h3> */}
-  //           </Row>
-  //         </Container>
-  //     </div>
-  //   );
-  // };
+    return (
+      <div className="viewItem" id={item_id} data-id={item_id}>
+      <Container>
+      <Row>
+      <Col xs={9}>
+          <img key="img" variant="top" src={item.img_url} />
+          </Col>
+          <Col>
+          <h2> $ {item.price}</h2>
+          <h6> Ingredients:  {item.ingredient}</h6>
+          <h4> Serving Size: {item.size}</h4>
+          </Col>
+            {/* <h2>{item.name}</h2>
+            <h3>$ {item.price}</h3> */}
+            </Row>
+          </Container>
+      </div>
+    );
+  };
+  render() {
+    let { item } = this.props;
+    console.log("in ItemCard");
+    return (
+      <div className="itemList" id={item.id} data-id={item.id}>
+        <Card key={item.id} style={{ width: "25rem" }}>
+          <Card.Img key="img" variant="top" src={item.img_url} />
+          <Card.Body key="body">
+            <h2>{item.name}</h2>
+            <h3>$ {item.price}</h3>
+            <Link
+              to="/ViewItem/"
+              data-id={item.id}
+              id={item.id}
+              value={item.id}
+              onClick={this.returnViewItem}
+            >
+              {" "}
+              View Item{" "}
+            </Link>
+          </Card.Body>
+        </Card>
+      </div>
+    );
+  }
 }
 
 export default ItemCard;
